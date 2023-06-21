@@ -24,12 +24,12 @@
 } 
 
     Location.prototype.calcCustomersEachHour = function (){
-        for (let I = 0; i < hours.length; i++){
+        for (let i = 0; i < hours.length; i++){
             this.customersEachHour.push(randomNum(this.minCust, this.maxCust));
         }
     };
 
-    Location.prototype.calcCustomersEachHour = function () {
+    Location.prototype.calccookieseachhour = function () {
         for (let i = 0; i < hours.length; i++) {
             let oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerHour);
             this.cookiesEachHour.push(oneHour);
@@ -40,12 +40,12 @@
 
     Location.prototype.render = function () {
          this.calcCustomersEachHour();
-         this.cookiesEachHour ();
+         this.calccookieseachhour ();
     
         const tr = document.createElement("tr");
 
         const th = document.createElement("th");
-        th.tectContent = this.storeName;
+        th.textContent = this.storeName;
 
         tr.appendChild(th);
     

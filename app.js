@@ -99,7 +99,7 @@ const tokyo = {
   },
 };
 
-const dubia = {
+const dubai = {
   storeName: "dubai",
   minCustPerHour: 11,
   maxCustPerHour: 38,
@@ -246,6 +246,6 @@ function randomNum(min, max) {
 
 seattle.render();
 tokyo.render();
-dubia.render();
+dubai.render();
 paris.render();
 lima.render();
