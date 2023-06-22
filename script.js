@@ -38,37 +38,48 @@
    
     };
 
+    const tableHeader = ["Location","6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Daily Total"];        
+        function createHeader () {
+            const headerRow = document.createElement("tr")
+            for (let i = 0; i ,tableHeader.length; i++) {
+            let headerCell = document.createElement("th")    
+                headerCell.textcontent = tableHeader [i];
+                headerRow.appendChild(headerCell);
+            }
+            storeTable.appendChild(headerRow);
+        }
+
     Location.prototype.render = function () {
          this.calcCustomersEachHour();
          this.calccookieseachhour ();
-    
-        const tr = document.createElement("tr");
+         
+        const tableRow = document.createElement("tr");
 
         const th = document.createElement("th");
-        th.textContent = this.storeName;
+        th.textContent = this.store;
 
-        tr.appendChild(th);
+        tableRow.appendChild(th);
     
         for (let i =0; i < hours.length; i++) {
             const td = document.createElement("td");
             td.textContent = this.cookiesEachHour[i];
-            tr.appendChild(td);
+            tableRow.appendChild(td);
         }
 
             const storeTotal = document.createElement("th");
             storeTotal.textContent = this.dailyCookies;
-            tr.appendChild(storeTotal);
+            tableRow.appendChild(storeTotal);
 
-            storeTable.appendChild(tr);
+            storeTable.appendChild(tableRow);
         };
 
 
 
-    const seattle = new Location("seattle", 23, 65, 6.3,);
-    const tokyo = new Location("tokyo", 3, 24, 1.2,);
-    const dubai = new Location("dubai", 11, 38, 3.7,);
-    const paris = new Location("paris", 20, 38, 2.3,);
-    const lima = new Location("lima", 2, 16, 4.6,);
+    const seattle = new Location("Seattle", 23, 65, 6.3,);
+    const tokyo = new Location("Tokyo", 3, 24, 1.2,);
+    const dubai = new Location("Dubai", 11, 38, 3.7,);
+    const paris = new Location("Paris", 20, 38, 2.3,);
+    const lima = new Location("Lima", 2, 16, 4.6,);
     console.log(seattle);
     
 
